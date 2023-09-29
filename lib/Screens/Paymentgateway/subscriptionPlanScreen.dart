@@ -8,6 +8,7 @@ import 'package:katha/Screens/Paymentgateway/payhereServices.dart';
 import 'package:http/http.dart' as http;
 import '../../Provider/user_model.dart';
 import '../ScreenTest/HomeScreen.dart';
+import 'cancelSubscription.dart';
 
 class SubscriptionPlansScreen extends StatefulWidget {
   const SubscriptionPlansScreen({super.key});
@@ -169,6 +170,21 @@ class _SubscriptionPlansScreenState extends State<SubscriptionPlansScreen> {
 
         ),
       ),
+      floatingActionButton: FloatingActionButton.extended(
+        heroTag: 1,
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (BuildContext context) =>  CancelSubscriptionScreen(),
+            ),
+          );
+        },
+        icon: const Icon(Icons.workspace_premium),
+        label: Text('Promo Code'.toUpperCase(),style: TextStyle(
+            fontSize: 12),),
+        backgroundColor: Colors.purple,
+      ),
     );
   }
 }
@@ -178,14 +194,14 @@ Future<void> accessToken(String reasonToSave,BuildContext context) async {
   if (kDebugMode) {
     print('payHereCancel() payHereCancel()');
   }
-  String url = 'http://www.payhere.lk/merchant/v1/oauth/token';
+  String url = 'https://sandbox.payhere.lk/merchant/v1/oauth/token';
 
 // test -  'Authorization': 'Basic NE9WeE1kYkZqZEk0SkREU1dxQjJpWDNMSjo0a21mTXc5OUFPbzREc0FZdUJseTMzNEpFV3g4eGpVYWo4Z2R1Q29TSzBnYQ==',
 
 
   // The headers for the API call
   Map<String, String> headers = {
-    'Authorization': 'Basic NE9WeE1kYkZqZEk0SkREU1dxQjJpWDNMSjo0a21mTXc5OUFPbzREc0FZdUJseTMzNEpFV3g4eGpVYWo4Z2R1Q29TSzBnYQ==',
+    'Authorization': 'Basic NE9WeE1kY05hM1U0SkREU1dxQjJpWDNMSjo0OVkxR0tFUGhBczRwRzU1czdUVFlrNEtIMDFJMWs3dGM4UWg4OE5qYUU4dw==',
 
   };
 
@@ -228,7 +244,7 @@ Future<void> payHereCancel({required String reasonToSave,required String accessT
   // Sandbox - https://sandbox.payhere.lk/merchant/v1/subscription/cancel
 
 
-  String url = 'http://www.payhere.lk/merchant/v1/subscription/cancel';
+  String url = ' https://sandbox.payhere.lk/merchant/v1/subscription/cancel';
 
   // The headers for the API call
   Map<String, String> headers = {
