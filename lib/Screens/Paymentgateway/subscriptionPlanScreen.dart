@@ -178,7 +178,7 @@ Future<void> accessToken(String reasonToSave,BuildContext context) async {
   if (kDebugMode) {
     print('payHereCancel() payHereCancel()');
   }
-  String url = 'https://www.payhere.lk/merchant/v1/oauth/token';
+  String url = 'http://www.payhere.lk/merchant/v1/oauth/token';
 
 // test -  'Authorization': 'Basic NE9WeE1kYkZqZEk0SkREU1dxQjJpWDNMSjo0a21mTXc5OUFPbzREc0FZdUJseTMzNEpFV3g4eGpVYWo4Z2R1Q29TSzBnYQ==',
 
@@ -228,7 +228,7 @@ Future<void> payHereCancel({required String reasonToSave,required String accessT
   // Sandbox - https://sandbox.payhere.lk/merchant/v1/subscription/cancel
 
 
-  String url = 'https://www.payhere.lk/merchant/v1/subscription/cancel';
+  String url = 'http://www.payhere.lk/merchant/v1/subscription/cancel';
 
   // The headers for the API call
   Map<String, String> headers = {
