@@ -10,6 +10,7 @@ import '../../GameScreen/Game/animationScreen.dart';
 import '../../GameScreen/Game/dataentry_screen.dart';
 import '../../GameScreen/Game/selection_screen.dart';
 import '../../GameScreen/testing/questionPage.dart';
+import '../../Paymentgateway/subscriptionPlanScreen.dart';
 import '../../PositionalValueDetection/Screens/PositionalErrorDetection.dart';
 import '../../PositionalValueDetection/Screens/letterErrorDetails.dart';
 import '../../PositionalValueDetection/Screens/letterErrorDetection.dart';
@@ -191,6 +192,37 @@ class _HomeScreenAllState extends State<HomeScreenAll> {
                                     ),
                                   ),
                                 ),
+                              ),
+                            ),
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => SubscriptionPlansScreen(),
+                                ));
+                              },
+                              style: ElevatedButton.styleFrom(
+                                primary: Colors.teal.shade400,
+                                padding: EdgeInsets.all(16.0),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(16.0),
+                                ),
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: const <Widget>[
+                                  Icon(Icons.healing,
+                                      size: 60.0, color: Colors.white),
+                                  SizedBox(height: 16.0),
+                                  Text(
+                                    'PAY',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontSize: 24.0,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
 
