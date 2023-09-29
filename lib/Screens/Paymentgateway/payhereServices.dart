@@ -2,16 +2,17 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:intl/intl.dart';
+import 'package:katha/Screens/Paymentgateway/subscriptionPlanScreen.dart';
 import 'package:payhere_mobilesdk_flutter/payhere_mobilesdk_flutter.dart';
+
+import '../ScreenTest/HomeScreen.dart';
+import 'firebaseManage.dart';
 
 class SubscriptionPayment {
 
   void premiumPetPurchasePayment({
 
-    ///
-    // required double totalPrice,
-    //
-    // required String city,
+
     required String country,
     required String skey,
 
@@ -20,16 +21,16 @@ class SubscriptionPayment {
     required String phone,
     required String email,
     required String name,
-    // required DateTime subscriptionDate,
+    required DateTime subscriptionDate,
     required String subscriptionPlanCategory,
-    // required DateTime subscriptionExpireDate,
-    required String petCount,
+    required DateTime subscriptionExpireDate,
+
     required String recurrence,
     required String duration,
     required int price, required mainContext,
   }) async {
     // Generating an order ID kathaapp.tbmr@gmail.com
-    final orderId = 'petpulzMorePets${DateFormat('yyyyMMddHHmmss').format(DateTime.now())}';
+    final orderId = 'kathaApp${DateFormat('yyyyMMddHHmmss').format(DateTime.now())}';
     // 4916217501611292
     // Creating a payment object
     Map paymentObject = {
@@ -64,22 +65,18 @@ class SubscriptionPayment {
           "Payment Success! Payment Id: $paymentId\nOrder Id: $orderId  ",
           toastPosition: EasyLoadingToastPosition.bottom);
 
-      // // Updating premium status in Firebase and restarting the app
-      // await FirebaseManageRecurring().updateMorePets(gSignClientId:gSignClientId,subscriptionDate:subscriptionDate,subscriptionPlanCategory:subscriptionPlanCategory,subscriptionExpireDate:subscriptionExpireDate,petCount:petCount, orderId: orderId, paymentId: paymentId,price:price).then((value) {
-      //
-      //   FirebaseManageRecurring().updateMorePetsCollection(gSignClientId:gSignClientId,phone:phone,email:email,name:name,subscriptionDate:subscriptionDate,subscriptionPlanCategory:subscriptionPlanCategory,subscriptionExpireDate:subscriptionExpireDate,petCount:petCount,orderId:orderId,paymentId:paymentId,price:price).then((value) {
-      //
+      // Updating premium status in Firebase and restarting the app
+      await FirebaseManage().subcriptionSuccessSave(gSignClientId:gSignClientId,subscriptionDate:subscriptionDate,subscriptionPlanCategory:subscriptionPlanCategory,subscriptionExpireDate:subscriptionExpireDate, orderId: orderId, paymentId: paymentId,price:price).then((value) {
 
 
-        // });
+        });
 
-
+      navigate(mainContext);
 
 
 
-      // });
       // // You can delay the navigation if you wish
-      // Util().navigate(mainContext);
+
 
 
     }, (error) {
@@ -90,6 +87,23 @@ class SubscriptionPayment {
           toastPosition: EasyLoadingToastPosition.bottom);
     });
 
+  }
+
+  void navigate(BuildContext context) {
+    Navigator.popUntil(
+      context,
+          (route) =>
+      route is MaterialPageRoute && route.builder(context) is SubscriptionPlansScreen,
+    );
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (BuildContext context) => HomeScreen(
+
+        ),
+      ),
+    );
   }
 
 
