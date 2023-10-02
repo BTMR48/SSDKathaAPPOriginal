@@ -19,6 +19,7 @@ import '../../ScreenTest/HomeScreen.dart';
 import '../../ScreenTest/ListWords.dart';
 import '../../ScreenTest/RecordScreen.dart';
 import 'loginScreen.dart';
+import '../../ContactScreen/message.dart';
 
 class HomeScreenAll extends StatefulWidget {
   const HomeScreenAll({Key? key}) : super(key: key);
@@ -112,6 +113,36 @@ class _HomeScreenAllState extends State<HomeScreenAll> {
                                   SizedBox(height: 16.0),
                                   Text(
                                     'අකුරු වැරදි ',
+                                    style: TextStyle(
+                                      fontSize: 20.0,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => Message(),
+                                ));
+                              },
+                              style: ElevatedButton.styleFrom(
+                                primary: Colors.purple.shade400,
+                                padding: EdgeInsets.all(16.0),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(16.0),
+                                ),
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: const <Widget>[
+                                  Icon(Icons.record_voice_over,
+                                      size: 60.0, color: Colors.white),
+                                  SizedBox(height: 16.0),
+                                  Text(
+                                    'Contact ',
                                     style: TextStyle(
                                       fontSize: 20.0,
                                       fontWeight: FontWeight.bold,

@@ -433,6 +433,7 @@ class Assets {
   static const String assetsScreenTestAssetsIncorrectFinal = 'assets/screenTestAssets/incorrectFinal.jpg';
   static const String assetsScreenTestAssetsSpiderList = 'assets/screenTestAssets/SpiderList.gif';
   static const String assetsScreenTestAssetsWordListBack = 'assets/screenTestAssets/wordListBack.jpg';
+  static const String contactScreenMessage = 'lib/Screens/ContactScreen/message.dart';
   static const String gameAnimationScreen = 'lib/Screens/GameScreen/Game/animationScreen.dart';
   static const String gameAssetsBAnimation = 'assets/gameAssets/bAnimation.gif';
   static const String gameAssetsBaby = 'assets/gameAssets/baby.json';
@@ -479,11 +480,6 @@ class Assets {
   static const String imagesOtherSmilingface = 'assets/gameAssets/images/other/smilingface.gif';
   static const String imagesOtherStars = 'assets/gameAssets/images/other/stars.json';
   static const String imagesOtherStars2 = 'assets/gameAssets/images/other/stars2.json';
-  static const String kathaAssetsAddImage = 'assets/addImage.png';
-  static const String kathaAssetsBackground2 = 'assets/background2.png';
-  static const String kathaAssetsLoginImage = 'assets/loginImage.jpg';
-  static const String kathaAssetsLogo = 'assets/logo.jpg';
-  static const String kathaAssetsLogoGif = 'assets/logoGif.gif';
   static const String libFirebaseOptions = 'lib/firebase_options.dart';
   static const String libMain = 'lib/main.dart';
   static const String libSplashScreen = 'lib/splashScreen.dart';
@@ -514,6 +510,11 @@ class Assets {
   static const String questionWordsHariiii = 'assets/gameAssets/songs/questionWords/Hariiii.wav';
   static const String questionWordsHawa = 'assets/gameAssets/songs/questionWords/hawa.wav';
   static const String questionWordsUthsahakarankooo = 'assets/gameAssets/songs/questionWords/uthsahakarankooo.wav';
+  static const String sSDKathaAPPOriginalAssetsAddImage = 'assets/addImage.png';
+  static const String sSDKathaAPPOriginalAssetsBackground2 = 'assets/background2.png';
+  static const String sSDKathaAPPOriginalAssetsLoginImage = 'assets/loginImage.jpg';
+  static const String sSDKathaAPPOriginalAssetsLogo = 'assets/logo.jpg';
+  static const String sSDKathaAPPOriginalAssetsLogoGif = 'assets/logoGif.gif';
   static const String screenTestAssetsCorrect = 'assets/screenTestAssets/correct.jpg';
   static const String screenTestAssetsDogIn = 'assets/screenTestAssets/DogIn.gif';
   static const String screenTestAssetsDogList = 'assets/screenTestAssets/DogList.gif';
